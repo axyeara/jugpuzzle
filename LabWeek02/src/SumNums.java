@@ -11,16 +11,20 @@ public class SumNums {
 			start = scanner.nextInt();
 			System.out.println("Ending number: ");
 			end = scanner.nextInt();
-			int sum = 0;
-			int startsum = start;
-			int endsum = end;
-			while(startsum != endsum + 1) {
-				sum += startsum;
-				startsum += 1;
-			}
-			System.out.println("The sum from "+start+" to "+end+ " is: " + sum);
-			
+			System.out.println("The sum from "+start+" to "+end+ " is: " + sumup(start,end));
 		}
-	
+	}
+	public static int sumup(int a, int b) {
+		int sum = 0;
+		if (b>=a) {
+			while (a != b + 1) {
+				sum += a;
+				a++;
+			}
+			return sum;
+		}
+		else {
+			return 0;
+		}
 	}
 }
