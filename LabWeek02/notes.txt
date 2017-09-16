@@ -1,0 +1,16 @@
+Please read the article in the following link:
+https://www.atlassian.com/git/tutorials/comparing-workflows
+Make sure to follow the "Feature Branch Workflow" when you are working on your assignments or labs
+
+The process generally should be:
+1. create a branch for new features or checkout an existing branch for existing features.
+2. do your work
+3. add and commit with a proper message
+4. checkout other people changes and fix any merge conflicts
+5. push your changes and merge your branch only if you are done
+
+Add comments only necessary, no need to add comments over every line or lines that are simple and clear to understand.
+
+Use proper names for your variables.
+
+Use proper spaces and tabs, but do not over do it.
