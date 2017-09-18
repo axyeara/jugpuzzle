@@ -1,44 +1,80 @@
+
+/**
+ * @author Alexander
+ *
+ */
 public class SodaCan {
 	
-	private String type;
-	private int amount;
-	private boolean isOpen;
+	public String type;
+	public int amount;
+	public boolean isOpen;
 	
-	public SodaCan(String type, boolean isOpen, int amount) {
+	
+	/**
+	 * This method initializes a SodaCan object
+	 * 
+	 * @param type    Stores the type of soda can
+	 * @param isOpen  Stores whether the can is open or closed
+	 */
+	
+	public SodaCan(String type, boolean isOpen) {
 		this.type = type;
 		this.amount = 250;
 		this.isOpen = isOpen;
 	}
 	
+	
+	/**
+	 * This method opens the can if it is closed. Remains open if 
+	 * it was already opened.
+	 */
 	public void open() {
-		if !(opened){
-			this.opened = true;
+		if (!isOpen){
+			this.isOpen = true;
 		}
 	}
-	public static int sip() {
+	
+	/** 
+	 * This method decreases the amount of soda can by 10cc if the can was opened.
+	 * If the amount of soda in the can is less than 10, then there will be no soda left.
+	 * @return   Returns the amount of soda that was taken out of the can.
+	 */
+	public int sip() {
 		if (this.isOpen && this.amount >= 10) {
 			this.amount -= 10;
 			return 10;
 		}
-		else {
-			int remainder = this.amount;
-			this.amount = 0;
-			return remainder
-		}
-	}
-	
-	public static int gulp() {
-		if (this.isOpen && this.amount >= 50){
-			this.amount -= 50;
-			return 50;
-		}
-		else {
+		else if (this.isOpen && this.amount < 10) {
 			int remainder = this.amount;
 			this.amount = 0;
 			return remainder;
 		}
+		else {
+			return 0;
+		}
 	}
 	
+	/**
+	 * This method decreases the amount of soda can by 50cc if the can was opened.
+	 * If the amount of soda in the can is less than 50, then there will be no soda left.
+	 * @return    Returns the amount of soda that was taken out of the can.
+	 */
+	public int gulp() {
+		if (this.isOpen && this.amount >= 50){
+			this.amount -= 50;
+			return 50;
+		}
+		else if (this.isOpen && this.amount < 50) {
+			int remainder = this.amount;
+			this.amount = 0;
+			return remainder;
+		}
+		else {
+			return 0;
+		}
+	}
+	
+
 	public String toString() {
 		return "Soda type: " + this.type + ", Opened: " + this.isOpen + ", amount: " + this.amount;
 	}
@@ -49,7 +85,14 @@ public class SodaCan {
 		SodaCan can2 = new SodaCan("Root Beer", true);
 		SodaCan can3 = new SodaCan("Coke", true);
 		can3.sip();
+		can1.gulp();
 		System.out.println(can3.amount);
+		System.out.println(can1);
+		can1.open();
+		can1.gulp();
+		System.out.println(can1);
+		can2.sip();
+		can2.gulp();
+		System.out.println(can2);		
 	}
-
 }
