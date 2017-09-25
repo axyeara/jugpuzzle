@@ -12,7 +12,7 @@ public class Primes {
             System.out.println(primes(10000)[9999]);
             System.out.println(primesLessThan(10000));
 
-            int n = 1000000;
+            int n = 100000;
             ArrayList<Integer> a;
             long start, end;
             
@@ -168,4 +168,7 @@ public class Primes {
 
 /* Answer to point g.
  * 
- * The method primeLessThan is fastest than the other primeLessThan* methods because */
+ * The method primeLessThan is faster than the other primeLessThan* methods because we iterating of a range of numbers only once using a "for" loop.
+ * This suggests that the algorithm runtime complexity is O(n). The other primeLessThan* methods have more that one "for" loops (which are nested), suggesting
+ * these have an algorithm runtime complexity of O(n^2).*/
+ 
