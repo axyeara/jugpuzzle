@@ -6,17 +6,26 @@ public class PlayWithShapes {
 	// 0) Review OO notes/examples from lecture
 	// 1) Declare a variable "shapes" that will reference an array of reference to Shape
 	
-	public PlayWithShapes() {
+	Shape[] shapes;
 	
+	public PlayWithShapes() {
+		
+		shapes = new Shape[10];
 		// 2) Make shapes equal a new array of 10 references to Shapes
 
 		
 		// 3) point shapes[0], ..., shapes[9] to new Rectangles and Circles 
-		shapes[0]=new Circle("red", 10, 5,5);
-		shapes[1]=new Circle("green", 20, 20, 15);
-		shapes[2]=new Rectangle("orange", 5, 10, 20, 40);
+		shapes[0]= new Circle("red", 10, 5,5);
+		shapes[1]= new Circle("green", 20, 20, 15);
+		shapes[2]= new Rectangle("orange", 5, 10, 20, 40);
 		// ...
-		
+		shapes[3] = new Rectangle("red", 10, 10, 20, 50);
+		shapes[3] = new Circle("orange", 10, 7,7);
+		shapes[3] = new Rectangle("green", 10, 10, 20, 60);
+		shapes[3] = new Circle("blue", 10, 3, 3);
+		shapes[3] = new Rectangle("yellow", 10, 20, 20, 50);
+		shapes[3] = new Circle("brown", 10, 4, 4);
+		shapes[3] = new Rectangle("red", 10, 25, 25, 50);			
 	}
 	
 	/**
@@ -24,6 +33,7 @@ public class PlayWithShapes {
 	 * within the "shapes" array.s
 	 * (This calls the .toString() method for each Shape).
 	 */
+	
 	public void printShapes() {
 		for (Shape s:shapes) {
 			System.out.println(s);
@@ -39,7 +49,10 @@ public class PlayWithShapes {
 	 * @param dy the amount to change all shapes y coordinates
 	 */
 	public void moveShapes(int dx, int dy) {
-		//TODO: Complete this method
+		for (Shape s:shapes) {
+			s.setX(dx);
+			s.setY(dy);
+		}
 	}
 
 	// 4) Complete colorShapes below to satisfy its javadoc
@@ -50,7 +63,9 @@ public class PlayWithShapes {
 	 * @param c the color that all the shapes should be set to
 	 */
 	public void colorShapes(String c) {
-		//TODO: Complete this method
+		for (Shape s:shapes) {
+			s.setColor(c);
+		}
 	}
 	
 	
