@@ -21,7 +21,7 @@ public class UnderstandInheritance {
 		//The line above calls the setWidth() method from the Rectangle parent class.
 		s.setX(10);
 		//The line above calls the setX() method from Shape grandparent class (parent of Rectangle).
-		// Because the Rectangle class inherites from Shape, its methods can also be inherited by
-		// the Square class
+		// Because the Rectangle class inherits from Shape, its methods can also be inherited by
+		// the Square class.
 	}
 }

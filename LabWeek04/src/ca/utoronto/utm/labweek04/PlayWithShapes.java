@@ -20,12 +20,12 @@ public class PlayWithShapes {
 		shapes[2]= new Rectangle("orange", 5, 10, 20, 40);
 		// ...
 		shapes[3] = new Rectangle("red", 10, 10, 20, 50);
-		shapes[3] = new Circle("orange", 10, 7,7);
-		shapes[3] = new Rectangle("green", 10, 10, 20, 60);
-		shapes[3] = new Circle("blue", 10, 3, 3);
-		shapes[3] = new Rectangle("yellow", 10, 20, 20, 50);
-		shapes[3] = new Circle("brown", 10, 4, 4);
-		shapes[3] = new Rectangle("red", 10, 25, 25, 50);			
+		shapes[4] = new Circle("orange", 10, 7,7);
+		shapes[5] = new Rectangle("green", 10, 10, 20, 60);
+		shapes[6] = new Circle("blue", 10, 3, 3);
+		shapes[7] = new Rectangle("yellow", 10, 20, 20, 50);
+		shapes[8] = new Circle("brown", 10, 4, 4);
+		shapes[9] = new Rectangle("red", 10, 25, 25, 50);			
 	}
 	
 	/**
@@ -74,6 +74,9 @@ public class PlayWithShapes {
 		PlayWithShapes s = new PlayWithShapes();
 		
 		// 5) Move all of the shapes around a bit
+		s.moveShapes(10,10);
+		s.moveShapes(4, 4);
+		s.moveShapes(30, 2);
 		Scanner scanner=new Scanner(System.in);
 		while(true){
 			System.out.println("Enter 'move' or 'color': ");
