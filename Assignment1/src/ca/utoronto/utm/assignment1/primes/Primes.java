@@ -15,7 +15,7 @@ public class Primes {
             System.out.println(primes(10000)[9999]);
             System.out.println(primesLessThan(10000));
 
-            int n = 10000000;
+            int n = 10000;
             ArrayList<Integer> a;
             long start, end;
             
@@ -133,7 +133,7 @@ public class Primes {
 		ArrayList<Integer> primes = new ArrayList<>();
 		for (int num = 2; num < n; num++) {
 			boolean dividesBy = false;
-			for (int prime: primes) {      
+			for (int prime: primes) {      // Checks if none of the current members of primes divides num. If none of them do, then add the num to primes.
 				if (num % prime == 0) {  
 					dividesBy = true;
 				}
@@ -154,9 +154,10 @@ public class Primes {
 	public static ArrayList<Integer> primesLessThanSieveRemove2(int n){
 		boolean[] primes = new boolean[n];
 		Arrays.fill(primes, true);
+		
 		for (int num = 2; num < n; num++) {
-			for (int index = 0; index < n; index++) {
-				if (index % num == 0 && index != num) {  // if the index j is divisible by integer i in the array, 
+			for (int index = 2; index < n; index++) {
+				if (index % num == 0 && index != num) {  // if the index is divisible by integer num in the array, 
 					primes[index] = false;               // the boolean value of that particular index of the boolean array is set to false.
 				}
 			}
