@@ -6,8 +6,8 @@ import org.junit.Test;
 /**
  * @author Alexander
  *
- * This class defines JUnit test cases for all the methods in Primes.java. It also defines different variables for ArrayLists, booleans and in[] arrays for these test cases.
- */
+ * NOTE TO TA: PLEASE IGNORE THIS TEST CASE FILE. PLEASE REFER TO PRIMESTEST.JAVA TEST CASES. THIS FILE WAS IMPOSSIBLE TO DELETE. SORRY.
+ */  
 public class primesLessThanTest {
 	ArrayList<Integer> a;
 	ArrayList<Integer> b;
