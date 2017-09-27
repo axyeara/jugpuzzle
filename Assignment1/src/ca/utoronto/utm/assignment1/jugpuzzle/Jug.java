@@ -7,35 +7,43 @@ package ca.utoronto.utm.assignment1.jugpuzzle;
  */
 public class Jug {
 	private int capacity;
-	private int numberID;
 	private int currentAmount;
 	
 	/**
-	 * This method initializes a new Jug object with a specified unit of liquid capacity,
-	 * the current amount of unit of liquid in it, and its number ID.
+	 * This method initializes a new Jug object with a specified units of liquid capacity and
+	 * the current amount of units of liquid in it.
 	 * 
-	 * @param capacity Amount of units of liquid in the jug.
+	 * @param capacity Maximum possible amount of units of liquid in the Jug.
+	 * @param currentAmount Current amount of units of liquid in the Jug.
 	 */
-	public Jug(int numberID, int capacity, int currentAmount) {
+	public Jug(int capacity, int currentAmount) {
 		this.capacity = capacity;
-		this.numberID = numberID;
 		this.currentAmount = currentAmount;
 	}
 	/**
-	 * @return Amount of units of liquid in a Jug (capacity).
+	 * @return Maximum possible amount of units of liquid in a Jug (capacity).
 	 */
 	public int getCapacity() {
 		return this.capacity;
 	}
 	
 	/**
-	 * @return Number ID of the Jug object
+	 * @return Current amount of units of liquid in a Jug.
 	 */
-	public int getNumberID() {
-		return this.numberID;
+	public int getCurrentAmount() {
+		return this.currentAmount;
 	}
-	 
+	
+	/**
+	 * Sets the current amount of units of liquid in a Jug to a specified quantity.
+	 * 
+	 * @param a Amount of units of liquid
+	 */
+	public void setCurrentAmount(int a) {
+		this.currentAmount = a;
+	}
+	
 	public String toString() {
-		return this.numberID + ": " + "(" + this.currentAmount + "/" + this.capacity + ") ";
+		return "(" + this.currentAmount + "/" + this.capacity + ") ";
 	}
 }

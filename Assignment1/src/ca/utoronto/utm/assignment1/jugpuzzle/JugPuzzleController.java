@@ -3,6 +3,7 @@ import java.io.*;
 import java.util.*;
 /**
  * @author csc207 student
+ * 
  * This class allows a console user to play an instance of JugPuzzle.
  */
 public class JugPuzzleController {
