@@ -2,7 +2,7 @@ package ca.utoronto.utm.assignment1.jugpuzzle;
 import java.io.*;
 import java.util.*;
 /**
- * @author csc207student
+ * @author csc207 student
  * This class allows a console user to play an instance of JugPuzzle.
  */
 public class JugPuzzleController {
@@ -21,16 +21,15 @@ public class JugPuzzleController {
         }
 
         /**
-         * FILL THIS IN (describe what this method is about)
-         * To see what good documentation looks like, look at the API documentation, 
-         * for example ArrayList (in the bottom left frame) at 
-         * http://download.oracle.com/javase/8/docs/api/
-         * this documentation was created using Javadoc. 
-         * FILL THIS IN (describe what this method is about)
-         * @param message (FILL THIS IN)
-         * @param lower   (FILL THIS IN)
-         * @param upper   (FILL THIS IN)
-         * @return        (FILL THIS IN)
+         * Prints a specified message and proceeds to ask the user for the Jug number (puzzle move)
+         * to which the specified message command is applied. If the Jug number inputted by
+         * the user is not between and including the specified lower and upper bounds of the number of Jug objects
+         * in the puzzle, then an error message will be printed.
+         * 
+         * @param message Message to be displayed to the user that asks for his/her move inputs
+         * @param lower   Lower bound of the number of Jug objects
+         * @param upper   Upper bound of the number of Jug objects
+         * @return  Move that was inputted by the user
          */
         private int getMove(String message, int lower, int upper){
                 int move;
@@ -51,7 +50,10 @@ public class JugPuzzleController {
                 }
         }
         /**
-         * FILL THIS IN (describe what this method is about)
+         * While the JugPuzzle is not solved, the method prints the current state of the JugPuzzle 
+         * (Number of moves, amount of liquid in jug and its capacity) and proceeds on asking
+         * for user input. If the JugPuzzle is solved in a certain number of moves,
+         * a message is printed indicating the user has won.
          */
         public void play(){
                 while(!jugPuzzle.getIsPuzzleSolved()){
@@ -63,7 +65,8 @@ public class JugPuzzleController {
                 }
                 if(jugPuzzle.getMoves()==1) {
                     System.out.println("Congrats you solved it in "+jugPuzzle.getMoves()+" move!!");
-                } else {
+                } 
+                else {
                 	System.out.println("Congrats you solved it in "+jugPuzzle.getMoves()+" moves!!");
                 }
         }
