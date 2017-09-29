@@ -35,14 +35,23 @@ public class Jug {
 	}
 	
 	/**
-	 * Sets the current amount of units of liquid in a Jug to a specified quantity.
+	 * Sets the current amount of units of liquid in a Jug to a specified quantity. If
+	 * the amount of liquid is greater than the capacity of the Jug, and error message will appear.
 	 * 
-	 * @param a Amount of units of liquid
+	 * @param amount Amount of units of liquid
 	 */
-	public void setCurrentAmount(int a) {
-		this.currentAmount = a;
+	public void setCurrentAmount(int amount) {
+		if (amount <= this.capacity) {
+			this.currentAmount = amount;
+		}
+		else {
+			System.out.println("Jug can't can't hold that much liquid, try setting another amount");
+		}
 	}
 	
+	/* 
+	 * @ return String representation of a Jug instance.
+	 */
 	public String toString() {
 		return "(" + this.currentAmount + "/" + this.capacity + ") ";
 	}

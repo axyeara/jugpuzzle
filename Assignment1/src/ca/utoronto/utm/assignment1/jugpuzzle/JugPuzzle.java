@@ -66,7 +66,10 @@ public class JugPuzzle {
 		return this.isPuzzleSolved;
 	}
 	
+	/* 
+	 * @return String representation of a JugPuzzle.
+	 */
 	public String toString() {
-		return moveNumber + "  " + "0: " + allJugs[0].toString() + "1: " + allJugs[1].toString() + "2: " + allJugs[2].toString();
+		return moveNumber + "  " + "0:" + allJugs[0].toString() + "1:" + allJugs[1].toString() + "2:" + allJugs[2].toString();
 	}
 }
