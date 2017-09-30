@@ -10,10 +10,10 @@ public class JugPuzzle {
 	
 	private int moveNumber;
 	private Jug[] allJugs;
-	private boolean isPuzzleSolved = false;
+
 	
 	/**
-	 * This class initializes a JugPuzzle object composed by three different Jug objects
+	 * This class initializes a JugPuzzle object composed by three different Jug objects.
 	 */
 	public JugPuzzle() {
 		allJugs = new Jug[3];
@@ -23,7 +23,7 @@ public class JugPuzzle {
 	}
 
 	/**
-	 * @return Number of moves the user has made in the JugPuzzle
+	 * @return Number of moves the user has made in the JugPuzzle.
 	 */
 	public int getMoves() {
 		return this.moveNumber;
@@ -31,45 +31,52 @@ public class JugPuzzle {
 	
 	/**
 	 * Initiates a move in the JugPuzzle by transfering an amount of units
-	 * of liquid from a specified Jug instance to another specified Jug instance.
+	 * of liquid from a specified Jug instance to another specified Jug instance, while
+	 * increasing the number of moves made in the puzzle.
 	 * 
-	 * @param x Number ID of the Jug that transfer a certain amount of units of liquid
-	 * @param y Number ID of the Jug that is filled by a certain amount of units of liquid
+	 * @param from Number ID of the Jug that transfer a certain amount of units of liquid.
+	 * @param to Number ID of the Jug that is filled by a certain amount of units of liquid.
 	 */
-	public void move(int x, int y) {
-		int fromJugAmount = allJugs[x].getCurrentAmount();
-		int toJugLeft = allJugs[y].getCapacity() - allJugs[y].getCurrentAmount();
-		int toJugAmount = allJugs[y].getCurrentAmount();
 	
-		
-		if (fromJugAmount != 0 && (toJugLeft > 0)) {
-			if (fromJugAmount <= toJugLeft) {
-				allJugs[y].setCurrentAmount(toJugAmount + fromJugAmount);
-				allJugs[x].setCurrentAmount(0);	
-				moveNumber++;
-			}
-			else {
-				allJugs[y].setCurrentAmount(allJugs[y].getCapacity());
-				allJugs[x].setCurrentAmount(fromJugAmount - toJugLeft);
-				moveNumber++;
-			}
-		}
-		
-		if (allJugs[0].getCurrentAmount() == 4 && allJugs[1].getCurrentAmount() == 4) {
-			this.isPuzzleSolved = true;
-		}
+	public void move(int from, int to) {
+		Jug fromJug = allJugs[from];
+		Jug toJug = allJugs[to];
+		spill(fromJug, toJug);
+		moveNumber++;
 	}
+	
 	/**
-	 * @return Returns true if the puzzle is solved, returns false if otherwise.
+	 * @return Returns true if the JugPuzzle is solved. Returns false if otherwise.
 	 */
-	public boolean getIsPuzzleSolved() {
-		return this.isPuzzleSolved;
+	public boolean isPuzzleSolved() {
+		
+		return allJugs[0].getCurrentAmount() == 4 && allJugs[1].getCurrentAmount() == 4;
 	}
+	
+	/**
+	 * A certain amount of units of liquid is removed from a specified Jug and transferred to another
+	 * specified Jug. The amount of liquid transferred from the specified Jug depends on its current
+	 * amount and the amount required to fill up the specified Jug.
+	 * 
+	 * @param fromJug Jug to which a certain amount of units of liquid is removed.
+	 * @param toJug Jug to which a certain amount of units of liquid will be added.
+	 */
+	public void spill(Jug fromJug, Jug toJug) {
+		fromJug.spillInto(toJug);
+	}
+	
+	/**
+	 * @return An array of Jugs from JugPuzzle.
+	 */
+	public Jug[] getAllJugs() {
+		return this.allJugs;
+	}
+		
 	
 	/* 
 	 * @return String representation of a JugPuzzle.
 	 */
 	public String toString() {
-		return moveNumber + "  " + "0:" + allJugs[0].toString() + "1:" + allJugs[1].toString() + "2:" + allJugs[2].toString();
+		return this.moveNumber + "  " + "0:" + allJugs[0].toString() + "1:" + allJugs[1].toString() + "2:" + allJugs[2].toString();
 	}
 }
