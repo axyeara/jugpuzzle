@@ -26,7 +26,7 @@ public class JugTest {
 	int actual;
 	
 	/**
-	 * Unit test for toString() method of Jug.
+	 * Unit test for toString() method and Jug() constructor method of Jug.
 	 */
 	@Test
 	public void testToString() {
@@ -111,19 +111,19 @@ public class JugTest {
 		
 		actual = testJug1.addLiquid(1);
 		assertEquals("testJug1 had 5 units of liquid "
-				+ ", its current amount is 5, so 0 units were added", 0, actual);	
+				+ ", its current amount is 6, so 1 unit were added", 1, actual);	
 		
 		actual = testJug2.addLiquid(10);
 		assertEquals("testJug2 had 3 units of liquid "
-				+ ", its current amount is 3, so 0 units were added", 0, actual);	
+				+ ", its current amount is 13, so 10 units were added", 10, actual);	
 		
 		actual = testJug3.addLiquid(8);
 		assertEquals("testJug3 had 8 units of liquid "
-				+ ", its current amount is 8, so 8 units were added", 0, actual);	
+				+ ", its current amount is 16, so 8 units were added", 8, actual);	
 		
 		actual = testJug4.addLiquid(5);
 		assertEquals("testJug4 had 5 units of liquid "
-				+ ", its current amount is 5, so 0 units were added", 0, actual);	
+				+ ", its current amount is 10, so 5 units were added", 5, actual);	
 		
 		actual = testJug4.addLiquid(3);
 		assertEquals("testJug4 had 5 units of liquid "
@@ -150,7 +150,7 @@ public class JugTest {
 		
 		actual = testJug0.removeLiquid(8);
 		assertEquals("testJug0 had 0 units of liquid "
-				+ ", its current amount is 0, so 0 units were removed", 0, actual);	
+				+ ", its current amount is -8, so 8 units were removed", 8, actual);	
 		
 		actual = testJug1.removeLiquid(0);
 		assertEquals("testJug1 had 5 units of liquid "
@@ -162,7 +162,7 @@ public class JugTest {
 		
 		actual = testJug1.removeLiquid(4);
 		assertEquals("testJug1 had 3 units of liquid "
-				+ ", its current amount is 3, so 0 units were removed", 0, actual);	
+				+ ", its current amount is -1, so 4 units were removed", 4, actual);	
 		
 		actual = testJug1.removeLiquid(3);
 		assertEquals("testJug1 had 3 units of liquid "
@@ -170,7 +170,7 @@ public class JugTest {
 		
 		actual = testJug2.removeLiquid(10);
 		assertEquals("testJug2 had 3 units of liquid "
-				+ ", its current amount is 3, so 0 units were removed", 0, actual);	
+				+ ", its current amount is -7, so 10 units were removed", 10, actual);	
 		
 		actual = testJug3.removeLiquid(8);
 		assertEquals("testJug3 had 8 units of liquid "
@@ -182,7 +182,7 @@ public class JugTest {
 		
 		actual = testJug5.removeLiquid(3);
 		assertEquals("testJug5 had 0 units of liquid "
-				+ ", its current amount is 0, so 0 units were removed", 0, actual);	
+				+ ", its current amount is -3, so 3 units were removed", 3, actual);	
 	}
 
 	/**
@@ -196,47 +196,47 @@ public class JugTest {
 		Jug testJug3 = new Jug(0,0);
 		Jug testJug4 = new Jug(5,5);
 		Jug testJug5 = new Jug(3,3);
-		String actual;
+		
 		
 		testJug0.spillInto(testJug1);
-		assertTrue("testJug1 now has 5 units of liquid", 5 == testJug1.getCurrentAmount());
-		assertTrue("testJug0 now has 3 units of liquid", 3 == testJug0.getCurrentAmount());
+		assertTrue("testJug1 now has 5 units of liquid", 5 == testJug1.getAmount());
+		assertTrue("testJug0 now has 3 units of liquid", 3 == testJug0.getAmount());
 		
 		testJug1.spillInto(testJug2);
-		assertTrue("testJug1 now has 2 units of liquid", 2 == testJug1.getCurrentAmount());
-		assertTrue("testJug2 now has 3 units of liquid", 3 == testJug2.getCurrentAmount());
+		assertTrue("testJug1 now has 2 units of liquid", 2 == testJug1.getAmount());
+		assertTrue("testJug2 now has 3 units of liquid", 3 == testJug2.getAmount());
 		
 		testJug2.spillInto(testJug0);
-		assertTrue("testJug2 now has 0 units of liquid", 0 == testJug2.getCurrentAmount());
-		assertTrue("testJug0 now has 6 units of liquid", 6 == testJug0.getCurrentAmount());
+		assertTrue("testJug2 now has 0 units of liquid", 0 == testJug2.getAmount());
+		assertTrue("testJug0 now has 6 units of liquid", 6 == testJug0.getAmount());
 		
 		testJug1.spillInto(testJug2);
-		assertTrue("testJug1 now has 0 units of liquid", 0 == testJug1.getCurrentAmount());
-		assertTrue("testJug2 now has 2 units of liquid", 2 == testJug2.getCurrentAmount());
+		assertTrue("testJug1 now has 0 units of liquid", 0 == testJug1.getAmount());
+		assertTrue("testJug2 now has 2 units of liquid", 2 == testJug2.getAmount());
 		
 		testJug0.spillInto(testJug1);
-		assertTrue("testJug0 now has 1 units of liquid", 1 == testJug0.getCurrentAmount());
-		assertTrue("testJug1 now has 5 units of liquid", 5 == testJug1.getCurrentAmount());
+		assertTrue("testJug0 now has 1 units of liquid", 1 == testJug0.getAmount());
+		assertTrue("testJug1 now has 5 units of liquid", 5 == testJug1.getAmount());
 		
 		testJug1.spillInto(testJug2);
-		assertTrue("testJug1 now has 4 units of liquid", 4 == testJug1.getCurrentAmount());
-		assertTrue("testJug2 now has 3 units of liquid", 3 == testJug2.getCurrentAmount());
+		assertTrue("testJug1 now has 4 units of liquid", 4 == testJug1.getAmount());
+		assertTrue("testJug2 now has 3 units of liquid", 3 == testJug2.getAmount());
 		
 		testJug2.spillInto(testJug0);
-		assertTrue("testJug2 now has 0 units of liquid", 0 == testJug2.getCurrentAmount());
-		assertTrue("testJug0 now has 4 units of liquid", 4 == testJug0.getCurrentAmount());
+		assertTrue("testJug2 now has 0 units of liquid", 0 == testJug2.getAmount());
+		assertTrue("testJug0 now has 4 units of liquid", 4 == testJug0.getAmount());
 		
 		testJug5.spillInto(testJug4);
-		assertTrue("testJug5 now has 3 units of liquid", 3 == testJug5.getCurrentAmount());
-		assertTrue("testJug4 now has 5 units of liquid", 5 == testJug4.getCurrentAmount());
+		assertTrue("testJug5 now has 3 units of liquid", 3 == testJug5.getAmount());
+		assertTrue("testJug4 now has 5 units of liquid", 5 == testJug4.getAmount());
 		
 		testJug4.spillInto(testJug5);
-		assertTrue("testJug4 now has 5 units of liquid", 5 == testJug4.getCurrentAmount());
-		assertTrue("testJug5 now has 3 units of liquid", 3 == testJug5.getCurrentAmount());
+		assertTrue("testJug4 now has 5 units of liquid", 5 == testJug4.getAmount());
+		assertTrue("testJug5 now has 3 units of liquid", 3 == testJug5.getAmount());
 		
 		testJug3.spillInto(testJug4);
-		assertTrue("testJug3 now has 0 units of liquid", 0 == testJug3.getCurrentAmount());
-		assertTrue("testJug4 now has 5 units of liquid", 5 == testJug4.getCurrentAmount());
+		assertTrue("testJug3 now has 0 units of liquid", 0 == testJug3.getAmount());
+		assertTrue("testJug4 now has 5 units of liquid", 5 == testJug4.getAmount());
 		
 		
 	}

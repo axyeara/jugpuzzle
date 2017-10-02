@@ -57,7 +57,7 @@ public class JugPuzzleController {
          * a message is printed indicating the user has won.
          */
         public void play(){
-                while(!jugPuzzle.isPuzzleSolved()){
+                while(!jugPuzzle.getIsPuzzleSolved()){
                         System.out.println(jugPuzzle); // called the toString() method of jugPuzzle
                         int from, to;
                         from = getMove("spill from jug: ", 0,2);

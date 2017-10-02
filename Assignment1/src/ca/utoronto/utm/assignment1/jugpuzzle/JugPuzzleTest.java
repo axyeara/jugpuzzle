@@ -8,7 +8,7 @@ import org.junit.Test;
  * @author csc207 student
  *
  * Class for unit tests of the methods belonging to the JugPuzzle.java file. These methods
- * test are: toString(), move() and isPuzzleSolved().
+ * test are: toString(), JugPuzzle() and move().
  */
 public class JugPuzzleTest {
 	
@@ -87,71 +87,9 @@ public class JugPuzzleTest {
 		
 	}
 
-	/**
-	 * Unit test for isPuzzleSolved() method of JugPuzzle.
-	 */
-	@Test
-	public void testIsPuzzleSolved() {
-		
-		
-		testPuzzle = new JugPuzzle();
-		assertTrue("This puzzle is not solved", false == testPuzzle.isPuzzleSolved());
-		
-		testPuzzle.getAllJugs()[0] = new Jug(8,4);
-		assertTrue("This puzzle is not solved", false == testPuzzle.isPuzzleSolved());
-		
-		testPuzzle.getAllJugs()[0] = new Jug(8,3);
-		testPuzzle.getAllJugs()[1] = new Jug(5,2);
-		testPuzzle.getAllJugs()[2] = new Jug(3,2);
-		assertTrue("This puzzle is not solved", false == testPuzzle.isPuzzleSolved());
-		
-		testPuzzle.getAllJugs()[0] = new Jug(8,4);
-		testPuzzle.getAllJugs()[1] = new Jug(5,4);
-		testPuzzle.getAllJugs()[2] = new Jug(3,0);
-		assertTrue("This puzzle is solved", true == testPuzzle.isPuzzleSolved());
-		
-		testPuzzle.getAllJugs()[0] = new Jug(8,5);
-		testPuzzle.getAllJugs()[1] = new Jug(5,3);
-		testPuzzle.getAllJugs()[2] = new Jug(3,0);
-		assertTrue("This puzzle is not solved", false == testPuzzle.isPuzzleSolved());
-		
-		testPuzzle.getAllJugs()[0] = new Jug(8,5);
-		testPuzzle.getAllJugs()[1] = new Jug(5,0);
-		testPuzzle.getAllJugs()[2] = new Jug(3,3);
-		assertTrue("This puzzle is not solved", false == testPuzzle.isPuzzleSolved());
-		
-		testPuzzle.getAllJugs()[0] = new Jug(8,0);
-		testPuzzle.getAllJugs()[1] = new Jug(5,5);
-		testPuzzle.getAllJugs()[2] = new Jug(3,3);
-		assertTrue("This puzzle is not solved", false == testPuzzle.isPuzzleSolved());
-		
-		testPuzzle.getAllJugs()[0] = new Jug(8,4);
-		testPuzzle.getAllJugs()[1] = new Jug(5,2);
-		testPuzzle.getAllJugs()[2] = new Jug(3,2);
-		assertTrue("This puzzle is not solved", false == testPuzzle.isPuzzleSolved());
-		
-		testPuzzle.getAllJugs()[0] = new Jug(8,1);
-		testPuzzle.getAllJugs()[1] = new Jug(5,4);
-		testPuzzle.getAllJugs()[2] = new Jug(3,3);
-		assertTrue("This puzzle is not solved", false == testPuzzle.isPuzzleSolved());
-		
-		testPuzzle.getAllJugs()[0] = new Jug(8,2);
-		testPuzzle.getAllJugs()[1] = new Jug(5,4);
-		testPuzzle.getAllJugs()[2] = new Jug(3,2);
-		assertTrue("This puzzle is not solved", false == testPuzzle.isPuzzleSolved());
-		
-		testPuzzle.getAllJugs()[0] = new Jug(8,4);
-		testPuzzle.getAllJugs()[1] = new Jug(5,1);
-		testPuzzle.getAllJugs()[2] = new Jug(3,3);
-		assertTrue("This puzzle is solved", false == testPuzzle.isPuzzleSolved());
-		
-		
-		
-		
-	}
 
 	/**
-	 * Unit test for toString() method of JugPuzzle.
+	 * Unit test for toString() method and JugPuzzle() constructor method of JugPuzzle.
 	 */
 	@Test
 	public void testToString() {

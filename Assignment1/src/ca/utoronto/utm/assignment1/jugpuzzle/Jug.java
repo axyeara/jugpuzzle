@@ -3,11 +3,13 @@ package ca.utoronto.utm.assignment1.jugpuzzle;
 /**
  * @author csc207 student
  *
- *This class defines the Jug class used for the JugPuzzle.
+ * The Jug class implements Jug objects and related methods. Each object has a specified liquid capacity
+ * and the current amount of liquid it holds. These objects will be the composition of the JugPuzzle class
+ * and will be manipulated by the console user through the JugPuzzleController class.
  */
 public class Jug {
 	private int capacity;
-	private int currentAmount;
+	private int amount;
 	
 	
 	
@@ -16,52 +18,44 @@ public class Jug {
 	 * the current amount of units of liquid in it.
 	 * 
 	 * @param capacity Maximum possible amount of units of liquid in the Jug.
-	 * @param currentAmount Current amount of units of liquid in the Jug.
+	 * @param amount Current amount of units of liquid in the Jug.
 	 */
-	public Jug(int capacity, int currentAmount) {
+	public Jug(int capacity, int amount) {
 		this.capacity = capacity;
-		this.currentAmount = currentAmount;
+		this.amount = amount;
 	}
 	
 	/**
-	 * @return Current amount of units of liquid in a Jug.
-	 */
-	public int getCurrentAmount() {
-		return this.currentAmount;
-	}
-	
-	/**
-	 * Adds a given amount of units of liquid to the Jug. If the amount added makes
-	 * the current amount of liquid exceed the capacity of the jug, no liquid is added.
+	 * Returns the current amount of units of liquid in a Jug instance.
 	 * 
-	 * @param amount Amount of units of liquid to be added to Jug.
+	 * @return Current amount of units of liquid in a Jug instance.
+	 */
+	public int getAmount() {
+		return this.amount;
+	}
+	
+	/**
+	 * Adds a given amount of units of liquid to the Jug. Intended as 
+	 * a helper function for the spillInto() method.
+	 * 
+	 * @param numUnits Amount of units of liquid to be added to Jug.
 	 * @return Amount of units of liquid that was added to the Jug.
 	 */
-	public int addLiquid(int amount) {
-		if (amount + this.currentAmount > this.capacity) {
-			amount = 0;
-		}
-		else {
-			this.currentAmount += amount;
-		}
-		return amount;
+	public int addLiquid(int numUnits) {
+		this.amount += numUnits;
+		return numUnits;
 	}
 	
 	/**
-	 * Removes a given amount of units of liquid from the Jug. If the amount removed 
-	 * makes the current amount of liquid less than zero, no liquid is removed.
+	 * Removes a given amount of units of liquid from the Jug. Intended as
+	 * a helper function for the spillInto() method.
 	 * 
-	 * @param amount Amount of units of liquid to be removed from the Jug.
+	 * @param numUnits Amount of units of liquid to be removed from the Jug.
 	 * @return Amount of units of liquid that was removed from the Jug.
 	 */
-	public int removeLiquid(int amount) {
-		if (this.currentAmount - amount < 0) {
-			amount = 0;
-		}
-		else {
-		this.currentAmount -= amount;
-		}
-		return amount;
+	public int removeLiquid(int numUnits) {
+		this.amount -= numUnits;
+		return numUnits;
 	}
 	
 	/**
@@ -72,12 +66,12 @@ public class Jug {
 	 * @param toJug Jug to which a certain amount of units of liquid is added from another Jug.
 	 */
 	public void spillInto(Jug toJug) {
-		int emptySpace = toJug.capacity - toJug.currentAmount;
-		if (this.currentAmount >= emptySpace) {
+		int emptySpace = toJug.capacity - toJug.amount; // Amount of units of liquid required to fill a Jug to its capacity.
+		if (this.amount >= emptySpace) {                             
 			toJug.addLiquid(this.removeLiquid(emptySpace));
 		}
 		else {
-			toJug.addLiquid(this.removeLiquid(this.currentAmount));
+			toJug.addLiquid(this.removeLiquid(this.amount));
 		}
 	}
 	
@@ -86,6 +80,6 @@ public class Jug {
 	 * @ return String representation of a Jug instance.
 	 */
 	public String toString() {
-		return "(" + this.currentAmount + "/" + this.capacity + ") ";
+		return "(" + this.amount + "/" + this.capacity + ") ";
 	}
 }
