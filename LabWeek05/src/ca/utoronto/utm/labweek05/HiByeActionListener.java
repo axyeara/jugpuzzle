@@ -20,6 +20,7 @@ public class HiByeActionListener implements ActionListener {
 
 	// ActionListener requires that we implement the method below
 	public void actionPerformed(ActionEvent e) {
+		System.out.println(e.getActionCommand());
 		this.tf.setText(e.getActionCommand());
 	}
 }
