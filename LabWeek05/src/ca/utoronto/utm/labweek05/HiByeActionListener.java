@@ -6,9 +6,12 @@ import javax.swing.JTextField;
 
 public class HiByeActionListener implements ActionListener {
 	
-	HiByeActionListener() {
+	JTextField tf;
 	
+	HiByeActionListener(JTextField tf){
+		this.tf = tf;
 	}
+	
 
 	// 1) Modify this so that it prints out which button was pressed.
 	// Hint: Lookup ActionEvent
@@ -17,6 +20,6 @@ public class HiByeActionListener implements ActionListener {
 
 	// ActionListener requires that we implement the method below
 	public void actionPerformed(ActionEvent e) {
-		System.out.println(" button pressed");
+		this.tf.setText(e.getActionCommand());
 	}
 }
