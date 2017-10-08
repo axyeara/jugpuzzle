@@ -11,9 +11,11 @@ Oct 6, 2016
 	Obstacles : 
 
 Oct 7, 2016
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : No work was done (break day).
+	Today     : Did not plan anything for today. I read the assignment instructions and understood what has been told.
+				I did mental planning of the user stories I will create (will update them soon) and the structure of my GUI.
+				Note: Weekend will be my only break-days for the assignment. I will have no break after Sunday (October 7th).
+	Obstacles : No obstacles yet.
 	
 Oct 8, 2016
 	Yesterday :
