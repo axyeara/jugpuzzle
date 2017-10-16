@@ -134,6 +134,51 @@ SO THAT  : I am aware of how many units of liquid each Jug contains.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 
+NAME     : Won alert
+PRIORITY : Minimal
+ESTIMATE : 30 minutes
+AS A     : player
+I WANT   : to know when I have won the game. 
+SO THAT  : I can see whether I won the game or not.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+NAME     : Won Halts Game
+PRIORITY : Minimal
+ESTIMATE : 30 minutes
+AS A     : player
+I WANT   : Not have the ability to make another move once 
+           the puzzle is solved. 
+SO THAT  : I can't accidentially corrupt my score by making a move 
+           after solving the puzzle. 
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+NAME     : New Game when Won
+PRIORITY : Intermediate
+ESTIMATE : 30 minutes
+AS A     : player
+I WANT   : to be given the choice to play a new game or to quit, once the 
+           game is over. 
+SO THAT  : I can play an unlimited amount of times!
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+NAME     : New Game Anytime
+PRIORITY : Intermediate
+ESTIMATE : 30 minutes
+AS A     : player
+I WANT   : to be given the choice to start a new game at any 
+           time during the game.
+SO THAT  : I can start the game whenever I feel lost.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+NAME     : Quit Anytime
+PRIORITY : Minimal
+ESTIMATE : 30 Minutes
+AS A     : player
+I WANT   : to be able to quit the game anytime.
+SO THAT  : I can stop the game whenever I feel like.
+--------------------------------------------------------------------------
+
 # OMITTED USER STORIES BELOW   ###########################################
 
 No omitted user stories.

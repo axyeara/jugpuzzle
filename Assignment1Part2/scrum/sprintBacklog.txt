@@ -14,6 +14,7 @@ partial sprint due to sickness. All of the user stories were done in two days, u
 Workload was divided in the following manner:
 
 October 13 - The following user stories were made: See GUI, Make Move, See number of moves, See State of Jugs.
-October 14, 15 - 
+October 14, 15 - Other functionalities have been developed: such as the possibility of restarting and exiting the game.
+the GUI can now indicate the user whether they have solved the JugPuzzle.
 
 

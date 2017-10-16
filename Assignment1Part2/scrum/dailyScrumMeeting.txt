@@ -44,18 +44,18 @@ Oct 12, 2016
 	Obstacles :
 	
 Oct 13, 2016
-	Yesterday :
-	Today     :
+	Yesterday :No work was done.
+	Today     :Implemented some functionalities. The user can see the Jug through GUI, make a movie, see the state of the jugs and see the number of moves.
 	Obstacles :
 	
 Oct 14, 2016
-	Yesterday :
-	Today     :
+	Yesterday :Implemented some functionalities. The user can see the Jug through GUI, make a movie, see the state of the jugs and see the number of moves.
+	Today     :Implemented some functionalities. The user can now see whether they won. They can also reset the JugPuzzle or exit it.
 	Obstacles :
 	
 Oct 15, 2016
-	Yesterday :
-	Today     : Commit and push by tonight at midnight for ontime submission.
+	Yesterday :Implemented some functionalities. The user can now see whether they won. They can also reset the JugPuzzle or exit it.
+	Today     : I added all my javadocs and fixed some code to make it simpler. I made the online submission.
 	Obstacles :
 
 Oct 16, 2016

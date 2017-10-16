@@ -4,14 +4,19 @@ import javax.swing.*;
 import java.awt.*;
 
 
+/**
+ * @author csc207 student
+ * Controller class for the JugPuzzle GUI
+ */
 public class JugPuzzleGUI {
+	/**
+	 * Method that runs JugPuzzle GUI. Method includes JComponents (e.g. JButtons, JLabels) and ActionListeners, which were implemented based on MVC design.
+	 */
 	public static void createAndShowGUI(){
 		JFrame puzzleFrame = new JFrame("Jug Puzzle");
 		puzzleFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
 		Container puzzleContainer = puzzleFrame.getContentPane();
 		puzzleContainer.setLayout(new GridLayout(0,3));
-		
-		
 		JugPuzzle puzzleModel = new JugPuzzle();
 		
 		
