@@ -3,12 +3,17 @@
 # Sprint Planning Meeting.
 
 # Sprint 1 October 6, 2016
-# Sprint 1 Backlog UserStories go below
+ No sprint
 
 # Sprint 2 October 9, 2016
-# Sprint 2 Backlog UserStories go below
+No sprint (sick day)
 
-# Sprint 3 October 12, 2016
-# Sprint 3 Backlog UserStories go below
+# Sprint 3 October 13, 2016
+partial sprint due to sickness. All of the user stories were done in two days, unfortunately.
+
+Workload was divided in the following manner:
+
+October 13 - The following user stories were made: See GUI, Make Move, See number of moves, See State of Jugs.
+October 14, 15 - 
 
 

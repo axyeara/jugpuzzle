@@ -1,5 +1,7 @@
 package ca.utoronto.utm.jugpuzzle;
 
+
+
 /**
  * Model a Jug and its contained liquid. The Jug has a non-negative amount of
  * liquid, and a capacity, the maximum amount of liquid the Jug can hold. At all
@@ -65,6 +67,7 @@ public class Jug {
 			return;
 		else
 			this.remove(other.add(this.amount));
+		
 	}
 
 	/**

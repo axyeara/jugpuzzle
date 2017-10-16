@@ -1,4 +1,5 @@
 package ca.utoronto.utm.jugpuzzle;
+import java.util.*;
 
 /**
  * A Jug Puzzle consists of three Jugs (numbered 0,1 and 2) with capacities 8,5
@@ -11,8 +12,8 @@ package ca.utoronto.utm.jugpuzzle;
  * @author csc207student
  */
 
-public class JugPuzzle {
-	private Jug[] jugs;
+public class JugPuzzle extends Observable {
+	Jug[] jugs;
 	private int moves;
 
 	/**
@@ -55,7 +56,18 @@ public class JugPuzzle {
 		if(0<=from && from<jugs.length && 0<=to && to<jugs.length){
 			jugs[from].spillInto(jugs[to]);
 			moves++;
+			setChanged();
+			notifyObservers();
 		}
+	}
+	
+	/**
+	 * Sets number of moves made in the JugPuzzle.
+	 * 
+	 * @param num an Integer identifying the number of moves
+	 */
+	public void setMoves(int num) {
+		this.moves = num;
 	}
 
 	/**

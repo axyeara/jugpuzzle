@@ -1,17 +1,17 @@
 # User Stories (add as appropriate, modify at each Sprint Planning Meeting
 --------------------------------------------------------------------------
 NAME     : See GUI
-PRIORITY :
-ESTIMATE : 
+PRIORITY : Intermediate
+ESTIMATE : 1 hour
 AS A     : player
 I WANT   : to see a simple, initial GUI for game play (for example, the
            one outlined in the assignment) the GUI is non-functional
-SO THAT  : 
+SO THAT  : I can play the game and be aware of the moves I make.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 NAME     : Make Move
-PRIORITY :
-ESTIMATE : 
+PRIORITY : Intermediate
+ESTIMATE : 1 hour
 AS A     : player
 I WANT   : to be able to make a game move. That is, choose the jug that I 
            spill from (press button). Then choose the jug I spill into 
@@ -22,37 +22,36 @@ SO THAT  : I can play the game
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 NAME     : See number of moves
-PRIORITY :
-ESTIMATE : 
+PRIORITY :Minimal
+ESTIMATE : 1 hour
 AS A     : player
 I WANT   : see the number of moves I have made in my attempt to 
            solve the puzzle. 
-           Hint: This is another view (=Observer) on the JugPuzzle. 
 SO THAT  : I can see my progress in solving the puzzle. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 NAME     : See State of Jugs 
-PRIORITY :
-ESTIMATE : 
+PRIORITY : Intermediate
+ESTIMATE :  30 minutes
 AS A     : player
 I WANT   : to graphically/visually see the current state of the jugs 
            in the jug puzzle. 
            Hint: This is another view (=observer), but this time 
            it could be a view on the Jug. 
-SO THAT  :
+SO THAT  : I am aware of how many units of liquid each Jug contains.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 NAME     : Won alert
-PRIORITY :
-ESTIMATE : 
+PRIORITY : Minimal
+ESTIMATE : 30 minutes
 AS A     : player
 I WANT   : to know when I have won the game. 
-SO THAT  :
+SO THAT  : I can see whether I won the game or not.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 NAME     : Won Halts Game
-PRIORITY :
-ESTIMATE : 
+PRIORITY : Minimal
+ESTIMATE : 30 minutes
 AS A     : player
 I WANT   : Not have the ability to make another move once 
            the puzzle is solved. 
@@ -61,41 +60,81 @@ SO THAT  : I can't accidentially corrupt my score by making a move
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 NAME     : New Game when Won
-PRIORITY :
-ESTIMATE : 
+PRIORITY : Intermediate
+ESTIMATE : 30 minutes
 AS A     : player
 I WANT   : to be given the choice to play a new game or to quit, once the 
            game is over. 
-SO THAT  :
+SO THAT  : I can play an unlimited amount of times!
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-NAME     :
-PRIORITY :
-ESTIMATE : 
-AS A     : player
-I WANT   :
-SO THAT  :
---------------------------------------------------------------------------
+
 --------------------------------------------------------------------------
 NAME     : New Game Anytime
-PRIORITY :
-ESTIMATE : 
+PRIORITY : Intermediate
+ESTIMATE : 30 minutes
 AS A     : player
 I WANT   : to be given the choice to start a new game at any 
            time during the game.
-SO THAT  :
+SO THAT  : I can start the game whenever I feel lost.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 NAME     : Quit Anytime
-PRIORITY :
-ESTIMATE : 
+PRIORITY : Minimal
+ESTIMATE : 30 Minutes
 AS A     : player
 I WANT   : to be able to quit the game anytime.
-SO THAT  :
+SO THAT  : I can stop the game whenever I feel like.
 --------------------------------------------------------------------------
 
 
 # COMPLETED USER STORIES BELOW ###########################################
 
+# User Stories (add as appropriate, modify at each Sprint Planning Meeting
+--------------------------------------------------------------------------
+NAME     : See GUI
+PRIORITY : Intermediate
+ESTIMATE : 1 hour
+AS A     : player
+I WANT   : to see a simple, initial GUI for game play (for example, the
+           one outlined in the assignment) the GUI is non-functional
+SO THAT  : I can play the game and be aware of the moves I make.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+NAME     : Make Move
+PRIORITY : Intermediate
+ESTIMATE : 1 hour
+AS A     : player
+I WANT   : to be able to make a game move. That is, choose the jug that I 
+           spill from (press button). Then choose the jug I spill into 
+           (press button). Then have the 
+           move made on the JugPuzzle. Note: I don't need to see the 
+           outcome of the spill yet. That is in another user story. 
+SO THAT  : I can play the game
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+NAME     : See number of moves
+PRIORITY :Minimal
+ESTIMATE : 1 hour
+AS A     : player
+I WANT   : see the number of moves I have made in my attempt to 
+           solve the puzzle. 
+SO THAT  : I can see my progress in solving the puzzle. 
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+NAME     : See State of Jugs 
+PRIORITY : Intermediate
+ESTIMATE :  30 minutes
+AS A     : player
+I WANT   : to graphically/visually see the current state of the jugs 
+           in the jug puzzle. 
+           Hint: This is another view (=observer), but this time 
+           it could be a view on the Jug. 
+SO THAT  : I am aware of how many units of liquid each Jug contains.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
 # OMITTED USER STORIES BELOW   ###########################################
+
+No omitted user stories.
 
