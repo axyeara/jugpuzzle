@@ -44,7 +44,7 @@ public class JugPuzzleGUI {
 		JLabel jugAmount2 = new JLabel("Amount: 0");
 		JLabel numMoves = new JLabel("Number of moves: 0");
 		
-		
+		// ActionListeners that are coupled with JComponents.
 		resetActionListener resetListener =  new resetActionListener(puzzleModel, jugButton1, jugButton2, jugButton3);
 		textDisplayActionListener jugListener = new textDisplayActionListener(textDisplay, puzzleModel);
 		jugMoveActionListener moveListener = new jugMoveActionListener(puzzleModel);
@@ -66,13 +66,13 @@ public class JugPuzzleGUI {
 		puzzleContainer.add(jugButton2);
 		puzzleContainer.add(jugButton3);
 		puzzleContainer.add(new JLabel("Capacity: 8"));
-		puzzleContainer.add(new JLabel("Capacity: 0"));
-		puzzleContainer.add(new JLabel("Capacity: 0"));
+		puzzleContainer.add(new JLabel("Capacity: 5"));
+		puzzleContainer.add(new JLabel("Capacity: 3"));
 		puzzleContainer.add(jugAmount0);
 		puzzleContainer.add(jugAmount1);
 		puzzleContainer.add(jugAmount2);
 		
-		// View observer objects
+		// View observer objects.
 		jugAmountView jugAmountView0 = new jugAmountView(jugAmount0,0);
 		jugAmountView jugAmountView1 = new jugAmountView(jugAmount1,1);
 		jugAmountView jugAmountView2 = new jugAmountView(jugAmount2,2);
@@ -95,7 +95,7 @@ public class JugPuzzleGUI {
 		
 
 	
-		
+		// Addition of more JComponents to JugPuzzle container.
 		puzzleContainer.add(textDisplay);
 		puzzleContainer.add(numMoves);
 		puzzleContainer.add(winView);
