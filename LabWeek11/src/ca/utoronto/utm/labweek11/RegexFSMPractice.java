@@ -41,30 +41,103 @@ public class RegexFSMPractice {
 	}
 
 	// Come up with some strings so that recogniseSomethingRegex returns true
-	// Describe what this recognises.
+	// Describe what this recognizes.
 	public static boolean recogniseSomethingRegex(String s) {
-		Pattern p = Pattern.compile("^[0-9]+[aeiou]{3}:(x|y|z)(.*)end$");
-		Matcher m = p.matcher(s);
-		if (m.matches()) {
-			System.out.println("Groupcount: " + m.groupCount());
-			System.out.println("Group 1: "+m.group(1));
-			System.out.println("Group 2: "+m.group(2));
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-	// Come up with some strings so that recogniseSomethingFSM returns true
-	// Describe what this recognises.
-	public static boolean recogniseSomethingFSM(String s) {
 		char [] c=s.toCharArray();
 		int len=s.length();
-		// We can now access the characters of s one at a time via c[0], c[1], ..., c[len-1]
 		
 		boolean retVal=true;
 		
 		int n=0;
+		int state=0; // Start out in the initial state
+		while(n<len){
+			switch(state){	
+				case 0:
+					if ('0' <= c[n] && c[n] <= '9') {
+						state = 1;}
+					else {
+						
+					}
+					break;
+				case 1:
+					if ('0' <= c[n] && c[n] <=  '9') {
+						state = 1;
+					} else if (c[n] == 'a' | c[n] == 'e' | c[n] == 'i' | c[n] == 'o' | c[n] == 'u') {
+						state = 2;
+					}
+					break;
+				case 2:
+					if (c[n] == 'a' | c[n] == 'e' | c[n] == 'i' | c[n] == 'o' | c[n] == 'u') {
+						state = 3;
+					} else {			
+					}
+					break;
+				case 3:
+					if (c[n] == 'a' | c[n] == 'e' | c[n] == 'i' | c[n] == 'o' | c[n] == 'u') {
+						state = 4;
+					}
+					break;
+				case 4:
+					if (c[n] == ':') {
+						state = 5;
+					}
+					break;
+				case 5:
+					if (c[n] == 'y' | c[n] == 'x' | c[n] == 'z') {
+						state = 6;
+					}
+					break;
+				case 6:
+					if (c[n] != 'e') {
+						state = 7;
+					} else if (c[n] == 'e') {
+						state = 8;
+					}
+					break;
+				case 7:
+					if (c[n] == 'e') {
+						state = 8;
+					}
+					break;
+				case 8:
+					if (c[n] == 'n') {
+						state = 9;
+					}
+					break;
+				case 9:
+					if (c[n] == 'd') {
+						state = 10;
+					}
+					break;
+				
+					
+			}
+			n=n+1;
+		}
+		
+		if (state != 10) {
+			retVal = false;
+		}
+		return retVal;
+	}
+	
+	
+	// Come up with some strings so that recogniseSomethingFSM returns true
+	// Describe what this recognises.
+	// This method recognizes numbers that start with either 0 or 1-9 and ends with 0. Best explained by the regex: ^([0-9])*0$.
+	public static boolean recogniseSomethingFSM(String s) {
+		char [] c=s.toCharArray();
+		int len=s.length();
+		// We can now access the characters of s one at a time via c[0], c[1], ..., c[len-1]
+		Pattern p = Pattern.compile("^([0-9])*0$");
+		Matcher m = p.matcher(s);
+		boolean retVal=true;
+		if (m.matches()) {
+			return true;
+		} else {
+			return false;
+		}
+		/*int n=0;
 		int state=0; // Start out in the initial state
 		while(n<len){
 			switch(state){	
@@ -92,7 +165,7 @@ public class RegexFSMPractice {
 		if (state != 1)
 			retVal=false;
 		
-		return retVal;
+		return retVal;*/
 	}
 
 	/**
@@ -106,7 +179,7 @@ public class RegexFSMPractice {
 	 */
 	public static boolean recogniseWellFedRegex(String s) {
 		// COMPLETE THIS! ...
-		Pattern p = Pattern.compile("");
+		Pattern p = Pattern.compile("[0-8]*7+[0-8]*");
 		Matcher m = p.matcher(s);
 		return m.matches();
 	}
@@ -131,13 +204,34 @@ public class RegexFSMPractice {
 		while(n<len){
 			switch(state){	
 				case 0:
+					if (('0' <= c[n] && c[n] <=  '6') | c[n] == '8') {
+						state = 0;
+					} else if (c[n] == '7') {
+						state = 1;
+					} else if (c[n] == '9') {
+						state = 2;
+					}
 					break;
 				case 1:
+					if ('0' <= c[n] && c[n] <=  '8') {
+						state = 1;
+					} else if(c[n] == '9') {
+						state = 2;
+					}
 					break;
 				case 2:
+					if ('0' <= c[n] && c[n] <=  '8') {
+						state = 2;
+					} else {
+						state = 2;
+					}
 					break;
 			}
 			n=n+1;
+		}
+		
+		if (state != 1) {
+			retVal = false;
 		}
 		return retVal;
 	}
